@@ -9,7 +9,7 @@ interface User{
 const getInfo=async()=>{
     try{
         console.log('发请求1')
-        const res= await axios.get('http://localhost:8081/user/1111')
+        const res= await axios.get(process.env.NEXT_PUBLIC_API_URL+'user/1111')
         console.log(res.data)
     }catch(err){
         console.log('error',err)
