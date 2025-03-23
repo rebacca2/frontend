@@ -27,8 +27,14 @@ jobs:
         uses: webfactory/ssh-agent@v0.5.3
         with: 
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+        
          
       - name: Deploy to Server
         run: |
+          mkdir -p ~/.ssh
+           # 将目标服务器的主机密钥添加到 known_hosts，避免第一次连接时需要手动验证
+          ssh-keyscan -H 121.4.254.104 >> ~/.ssh/known_hosts
+          chmod 700 ~/.ssh
+          chmod 644 ~/.ssh/known_hosts
           scp -r ./build/* ubuntu@121.4.254.104:/var/www/frontend
           
