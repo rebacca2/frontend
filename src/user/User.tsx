@@ -1,11 +1,11 @@
 import React from "react";
 import axios from 'axios'
-import {useQuery,gql} from '@apollo/client'
-interface User{
-    id:number,
-    name:string,
-    age:number
-}
+// import {useQuery,gql} from '@apollo/client'
+// interface User{
+//     id:number,
+//     name:string,
+//     age:number
+// }
 const getInfo=async()=>{
     try{
         console.log('发请求1')
@@ -20,20 +20,20 @@ const getInfo=async()=>{
         console.log('error',err)
     }
 }
-const GET_USERS=gql`
-    query alluser{
-        user(id:1112){
-            id
-            name
-            age
-        }
-    }
-    `;
-const getInfo2=()=>{
+// const GET_USERS=gql`
+//     query alluser{
+//         user(id:1112){
+//             id
+//             name
+//             age
+//         }
+//     }
+//     `;
+// const getInfo2=()=>{
    
-}
+// }
 function User(){
-    const{loading,error,data}=useQuery(GET_USERS);
+    // const{loading,error,data}=useQuery(GET_USERS);
     // console.log('请求2',data)
     return (
         <div>user
