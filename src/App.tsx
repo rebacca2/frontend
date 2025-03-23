@@ -10,6 +10,7 @@ function App() {
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
+        我是新版本的！！
         <User/>
       </header>
     </div>
